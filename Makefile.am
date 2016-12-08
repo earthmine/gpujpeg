@@ -7,7 +7,7 @@ SUBDIRS = . # test/memcheck test/opengl_interop
 CUDA_INSTALL_PATH=@CUDA_INSTALL_PATH@
 NVCC=${CUDA_INSTALL_PATH}/bin/nvcc
 
-NVCCFLAGS=@NVCCFLAGS@ -Xcompiler -fPIC -Xcompiler '@COMMON_FLAGS@' \
+NVCCFLAGS=@NVCCFLAGS@ -D_FORCE_INLINES -Xcompiler -fPIC -Xcompiler '@COMMON_FLAGS@' \
 	-gencode arch=compute_35,code=compute_35 \
 	-gencode arch=compute_35,code=sm_35 \
 	-gencode arch=compute_30,code=sm_30 \
